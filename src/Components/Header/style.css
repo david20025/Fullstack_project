@@ -1,0 +1,56 @@
+header {
+    background-color: #20232a;
+    color: white;
+    display: block;
+    justify-content: flex-start;
+    height: 110px;
+}
+
+form[name="login"] {
+    float: right;
+    vertical-align: center;
+}
+
+.header-name a {
+    color: red;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+
+.main-nav a {
+    text-decoration: none;
+}
+
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    list-style-position: inside;
+    font: 25px 'Oswald', sans-serif;
+    padding: 10px;
+}
+
+.main-menu li {
+    display: inline-flex;
+    padding: 10px 30px;
+    margin: 0;
+}
+
+/*.main-menu li.active {*/
+/*    background: #29c5e6;*/
+/*    color: #fff;*/
+/*}*/
+
+.main-menu a {
+    color: #b2b2b2;
+}
+
+.main-menu {
+    align-items: flex-end;
+    display: flex;
+}
+
+
