@@ -1343,7 +1343,6 @@ a {
         width: 708px;
         margin: 0 auto;
         margin-bottom: 0;
-        background-image: url("../img/Zal.jpg"), url("../img/Zal.jpg");
         padding-top: 41px;
         padding-bottom: 48px;
         background: none;
@@ -1353,7 +1352,6 @@ a {
     .page-main__top {
         width: 1300px;
         padding-top: 93px;
-        background-image: url("../img/Zal.jpg"), url("../img/Zal.jpg");
         padding-bottom: 53px; } }
 
 @media (min-width: 768px) {

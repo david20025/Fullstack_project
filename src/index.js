@@ -6,14 +6,15 @@ import ReactDOM from 'react-dom';
 // import Main from "./Components/Main";
 // import Footer from "./Components/Footer";
 import * as serviceWorker from './serviceWorker';
-import General from "./Components/General";
+import Form from "./Components/Form/form.js";
+import Personal from "./Components/Personal/personal";
 
 ReactDOM.render(
     <React.Fragment>
-        <General/>
-    {/*<Header/>*/}
-    {/*<Main/>*/}
-    {/*<Footer/>*/}
+        <Personal/>
+        {/*<Header/>*/}
+        {/*<Main/>*/}
+        {/*<Footer/>*/}
     </React.Fragment>,
     document.getElementById('root'));
 
