@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './style.css';
 import Log from '../img/Log.png'
+import { Link } from "react-router-dom";
 import Was_now from '../img/Was_now.png'
 import Name from '../img/Name.png'
 
@@ -16,14 +17,14 @@ class Form extends Component {
 
             <header className="page-header">
 
-                <a className="page-header__logo" href="./index.js">
+                <Link className="page-header__logo" to="/index.js">
                     <picture>
                         <source media="(min-width: 1300px)" srcSet={Log}/>
                         <source media="(min-width: 768px)" srcSet={Log}/>
                         <img src={Log} width="191" height="39"
                              alt="Логотип Musofon"/>
                     </picture>
-                </a>
+                </Link>
 
                 <nav className="page-header__nav main-nav main-nav--closed main-nav--nojs">
                     <button className="main-nav__toggle" type="button">
@@ -31,7 +32,7 @@ class Form extends Component {
                     </button>
                     <ul className="main-nav__list site-list">
                         <li className="site-list__item">
-                            <a className="site-list__link" href="index.js">Главная</a>
+                            <Link className="site-list__link" to="/index.js">Главная</Link>
                         </li>
                         <li className="site-list__item site-list__item--active">
                             <a className="site-list__link">Вход / Регистрация</a>
@@ -64,7 +65,7 @@ class Form extends Component {
 
                     <div className="selection__wrapper-bottom">
                         <button className="selection__button" type="submit">Войти</button>
-                        <a className="site-list__link" href="personal.js">Зарегистрироваться</a>
+                        <Link className="site-list__link" to="/personal">Зарегистрироваться</Link>
                     </div>
 
                 </form>
@@ -78,9 +79,9 @@ class Form extends Component {
 
                     <div className="page-footer__wrapper">
 
-                        <a className="page-footer__logo" href="index.js">
+                        <Link className="page-footer__logo" to="/index.js">
                             <img src={Name} width="128" height="24" alt="Логотип Musofon"/>
-                        </a>
+                        </Link>
 
                     </div>
                 </div>

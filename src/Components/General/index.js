@@ -3,6 +3,7 @@
 // import Open_menu from "./js/open-menu.js"
 // import Picturefill from "./js/picturefill.min.js"
 import React, {Component} from 'react';
+import { Link } from "react-router-dom";
 // import {Link} from "react-router-dom";
 import './style.css';
 import Log from '../img/Log.png'
@@ -118,11 +119,11 @@ class General extends Component {
             <header className="page-header page-header--initial">
                 <div className="page-header__wrapper">
 
-                    <a className="page-header__logo" href="./index.js">
+                    <Link to='/' className="page-header__logo">
                         <picture>
                             <img src={Log} width="191" height="39" alt="Логотип Musofon"/>
                         </picture>
-                    </a>
+                    </Link>
 
                     <nav className="page-header__nav main-nav main-nav--closed main-nav--nojs">
                         <ul className="main-nav__list site-list">
@@ -130,7 +131,7 @@ class General extends Component {
                                 <a className="site-list__link">Главная</a>
                             </li>
                             <li className="site-list__item">
-                                <a className="site-list__link" href="form.js">Вход / Регистрация</a>
+                                <Link className="site-list__link" to="/form">Вход / Регистрация</Link>
                             </li>
                         </ul>
                     </nav>
@@ -147,7 +148,7 @@ class General extends Component {
 
                 <div className="page-main__container">
 
-                    <a className="page-main__button" href="form.js">Подобрать аудио</a>
+                    <Link className="page-main__button" to="/form">Подобрать аудио</Link>
 
                     <section className="programs">
                         <h2 className="visually-hidden">Программы</h2>
@@ -158,7 +159,7 @@ class General extends Component {
                                     Вам нравится петь, но вы боитесь скомпрометировать себя в кругу друзей или родных?
                                     Мы подберем вам трек, с которым ваше выступление пройдет на ура!
                                 </p>
-                                <a className="program__link" href="form.js">Найти решение</a>
+                                <Link className="program__link" to="/form">Найти решение</Link>
                             </li>
                             <li className="programs__item program">
                                 <h3 className="program__title">Профессионал</h3>
@@ -166,7 +167,7 @@ class General extends Component {
                                     Вы занимаетесь вокалом многие годы, но ваш репертуар пора обновить? Наша
                                     профессиональная команда подберет лучшее для вашего тембра!
                                 </p>
-                                <a className="program__link" href="form.js">Найти решение</a>
+                                <Link className="program__link" to="/form">Найти решение</Link>
                             </li>
                         </ul>
                     </section>
@@ -248,9 +249,9 @@ class General extends Component {
 
                     <div className="page-footer__wrapper">
 
-                        <a className="page-footer__logo" href="index.js">
+                        <Link className="page-footer__logo" to="/index.js">
                             <img src={Name} width="128" height="24" alt="Логотип Musofon"/>
-                        </a>
+                        </Link>
 
                         <nav className="page-header__nav main-nav main-nav--closed main-nav--nojs">
                             <button className="main-nav__toggle" type="button">
@@ -261,7 +262,7 @@ class General extends Component {
                                     <a className="site-list__link">Главная</a>
                                 </li>
                                 <li className="site-list__item">
-                                    <a className="site-list__link" href="form.js">Вход / Регистрация</a>
+                                    <Link className="site-list__link" to="/form">Вход / Регистрация</Link>
                                 </li>
                             </ul>
                         </nav>

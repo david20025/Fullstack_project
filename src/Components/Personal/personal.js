@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './style.css';
 import Log from '../img/Log.png'
+import { Link } from "react-router-dom";
 import Was_now from '../img/Was_now.png'
 import Name from '../img/Name.png'
 
@@ -31,10 +32,10 @@ class Personal extends Component {
                     </button>
                     <ul className="main-nav__list site-list">
                         <li className="site-list__item">
-                            <a className="site-list__link" href="index.js">Главная</a>
+                            <Link className="site-list__link" to="/index.js">Главная</Link>
                         </li>
                         <li className="site-list__item">
-                            <a className="site-list__link" href="form.js">Вход / Регистрация</a>
+                            <Link className="site-list__link" to="/form">Вход / Регистрация</Link>
                         </li>
                     </ul>
                 </nav>
@@ -156,9 +157,9 @@ class Personal extends Component {
 
                     <div className="page-footer__wrapper">
 
-                        <a className="page-footer__logo" href="index.js">
+                        <Link className="page-footer__logo" to="/index.js">
                             <img src={Name} width="128" height="24" alt="Логотип Musofon"/>
-                        </a>
+                        </Link>
 
                     </div>
                 </div>
