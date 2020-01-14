@@ -184,7 +184,7 @@ class General extends Component {
                                 <p className="info__big">2</p>
                             </li>
                             <li className="info__item">
-                                <p className="info__text">Одна-две проб.</p>
+                                <p className="info__text">Одна-две проб, на которых вы сможете внести дополнительные комментарии и уточнения.</p>
                                 <p className="info__big">3</p>
                             </li>
                             <li className="info__item">
@@ -206,8 +206,8 @@ class General extends Component {
                             </p>
                             <div className="example__stats stats">
                                 <div className="stats__weight weight">
-                                    <span className="weight__kilo">3 Х</span>
-                                    <span className="weight__text">Успеха</span>
+                                    <span className="success__number">3 Х</span>
+                                    <span className="success__text">Успеха</span>
                                 </div>
                                 <div className="stats__period period">
                                     <span className="period__days">7 дней</span>
@@ -226,7 +226,7 @@ class General extends Component {
                                     <picture>
                                         <img className="condition__photo condition__photo--after"
                                              src={Was_now}
-                                             alt="Стал худой Валера"/>
+                                             alt="Развитие Валеры"/>
                                     </picture>
                                 </li>
                             </ul>
