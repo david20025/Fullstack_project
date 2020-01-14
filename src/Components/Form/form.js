@@ -48,15 +48,15 @@ class Form extends Component {
                 <form className="selection" action="https://echo.htmlacademy.ru" method="post">
 
                     <div className="selection__wrapper">
-                        <fieldset className="selection__group cat">
+                        <fieldset className="selection__group user">
                             <p className="selection__item">
-                                <label className="cat__data" htmlFor="cat-name">Логин: </label>
-                                <input className="cat__text" type="text" name="name" id="cat-name"
+                                <label className="user__data" htmlFor="user-name">Логин: </label>
+                                <input className="user__text" type="text" name="name" id="user-name"
                                        placeholder="musofon@mail.ru" required/>
                             </p>
                             <p className="selection__item">
-                                <label className="cat__data" htmlFor="cat-weight">Пароль: </label>
-                                <input className="cat__text" type="text" name="weight" id="cat-weight"
+                                <label className="user__data" htmlFor="password">Пароль: </label>
+                                <input className="user__text" type="text" name="password" id="password"
                                        placeholder="********" required/>
                             </p>
                         </fieldset>
