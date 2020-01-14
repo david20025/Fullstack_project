@@ -64,21 +64,18 @@ class Personal extends Component {
                             <ul className="selection__list">
                                 <li className="selection__item">
                                     <input className="visually-hidden purpose__radio" type="radio" name="purpose"
-                                           value="Похудение" id="fat" checked>
+                                           value="Похудение" id="fat" checked/>
                                         <label className="purpose__data" htmlFor="fat">Поп</label>
-                                    </input>
                                 </li>
                                 <li className="selection__item">
                                     <input className="visually-hidden purpose__radio" type="radio" name="purpose"
-                                           value="Набор массы" id="thin">
+                                           value="Набор массы" id="thin"/>
                                         <label className="purpose__data" htmlFor="thin">Джаз</label>
-                                    </input>
                                 </li>
                                 <li className="selection__item">
                                     <input className="visually-hidden purpose__radio" type="radio" name="purpose"
-                                           value="Не знаю (Нужен ваш совет)" id="advice">
+                                           value="Не знаю (Нужен ваш совет)" id="advice"/>
                                         <label className="purpose__data" htmlFor="advice">Классика</label>
-                                    </input>
                                 </li>
                             </ul>
                         </fieldset>
@@ -90,20 +87,18 @@ class Personal extends Component {
                             <p className="selection__item">
                                 <label className="owner__data" htmlFor="owner-email">E&#8209;mail:*</label>
                                 <input className="owner__text" type="email" name="email" id="owner-email"
-                                       placeholder="musofon@mail.ru" required>
+                                       placeholder="musofon@mail.ru" required/>
                                     <svg className="owner__mail" width="18" height="14">
-                                        <use xlink:href="img/sprite.svg#icon-mail"></use>
+                                        <use href="img/sprite.svg#icon-mail"/>
                                     </svg>
-                                </input>
                             </p>
                             <p className="selection__item">
                                 <label className="owner__data" htmlFor="owner-tel">Телефон:*</label>
                                 <input className="owner__text" type="tel" name="tel" id="owner-tel"
-                                       placeholder="8 (960) 900-60-90" required>
+                                       placeholder="8 (960) 900-60-90" required/>
                                     <svg className="owner__phone" width="21" height="21">
-                                        <use xlink:href="img/sprite.svg#icon-phone"/>
+                                        <use href="img/sprite.svg#icon-phone"/>
                                     </svg>
-                                </input>
                             </p>
                         </div>
                     </fieldset>
@@ -119,27 +114,23 @@ class Personal extends Component {
                         <ul className="selection__list additionally__list">
                             <li className="selection__item">
                                 <input className="visually-hidden additionally__checkbox" type="checkbox"
-                                       name="sugarsubstitute" id="sugar" checked>
+                                       name="sugarsubstitute" id="sugar" checked/>
                                     <label className="additionally__data" htmlFor="sugar">Музыкальный слух</label>
-                                </input>
                             </li>
                             <li className="selection__item">
                                 <input className="visually-hidden additionally__checkbox" type="checkbox" name="water"
-                                       id="water">
+                                       id="water"/>
                                     <label className="additionally__data" htmlFor="water">Чувство ритма</label>
-                                </input>
                             </li>
                             <li className="selection__item">
                                 <input className="visually-hidden additionally__checkbox" type="checkbox" name="milk"
-                                       id="milk">
+                                       id="milk"/>
                                     <label className="additionally__data" htmlFor="milk">Широкий диапазон</label>
-                                </input>
                             </li>
                             <li className="selection__item">
                                 <input className="visually-hidden additionally__checkbox" type="checkbox"
-                                       name="vitamins" id="vitamins">
+                                       name="vitamins" id="vitamins"/>
                                     <label className="additionally__data" htmlFor="vitamins">Дорожка караоке</label>
-                                </input>
                             </li>
                         </ul>
                     </fieldset>
