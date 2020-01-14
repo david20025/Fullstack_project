@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import Header from "./Components/Header";
-import Main from "./Components/Main";
-import Footer from "./Components/Footer";
+// import './index.css';
+// import App from './App';
+// import Header from "./Components/Header";
+// import Main from "./Components/Main";
+// import Footer from "./Components/Footer";
 import * as serviceWorker from './serviceWorker';
+import General from "./Components/General";
 
 ReactDOM.render(
     <React.Fragment>
-    <Header/>
-    <Main/>
-    <Footer/>
+        <General/>
+    {/*<Header/>*/}
+    {/*<Main/>*/}
+    {/*<Footer/>*/}
     </React.Fragment>,
     document.getElementById('root'));
 
