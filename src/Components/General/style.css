@@ -1,3 +1,4 @@
+/*@import url("./img/icon-tick.svg");*/
 html {
     line-height: 1.15; }
 
@@ -2436,7 +2437,7 @@ a {
     .weight {
         width: 162px; } }
 
-.weight__kilo {
+.success__number {
     font-family: "Oswald", "Arial", sans-serif;
     font-weight: 400;
     color: #111111;
@@ -2451,7 +2452,7 @@ a {
     text-transform: uppercase; }
 
 @media (min-width: 768px) {
-    .weight__kilo {
+    .success__number {
         padding-top: 11px;
         padding-right: 56px;
         padding-bottom: 14px;
@@ -2459,7 +2460,7 @@ a {
         font-size: 30px;
         line-height: 37px; } }
 
-.weight__text {
+.success__text {
     position: absolute;
     top: 33px;
     left: 18px;
@@ -2474,7 +2475,7 @@ a {
     background-color: #f2f2f2; }
 
 @media (min-width: 768px) {
-    .weight__text {
+    .success__text {
         top: 48px;
         left: 24px;
         width: 114px;
@@ -2484,5 +2485,5 @@ a {
         background-color: #ffffff; } }
 
 @media (min-width: 1300px) {
-    .weight__text {
+    .success__text {
         background-color: #f2f2f2; } }
