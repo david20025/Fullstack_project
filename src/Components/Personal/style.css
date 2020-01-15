@@ -1,3 +1,4 @@
+/*@import url("./img/icon-tick.svg");*/
 html {
     line-height: 1.15; }
 
@@ -1342,7 +1343,6 @@ a {
         width: 708px;
         margin: 0 auto;
         margin-bottom: 0;
-        background-image: url("../img/Zal.jpg"), url("../img/Zal.jpg");
         padding-top: 41px;
         padding-bottom: 48px;
         background: none;
@@ -1352,7 +1352,6 @@ a {
     .page-main__top {
         width: 1300px;
         padding-top: 93px;
-        background-image: url("../img/Zal.jpg"), url("../img/Zal.jpg");
         padding-bottom: 53px; } }
 
 @media (min-width: 768px) {
@@ -1441,6 +1440,70 @@ a {
     height: 50px;
     border-radius: 50%;
     background-color: #1181fb;
+    background-position: 0 0;
+    background-repeat: no-repeat; }
+
+@media (min-width: 768px) {
+    .program {
+        width: 708px;
+        padding-top: 40px;
+        padding-bottom: 58px;
+        padding-left: 52px; }
+    .program::before {
+        top: 92px;
+        left: 447px;
+        width: 200px;
+        height: 200px; }
+    .program:first-child::after {
+        top: 80px;
+        left: 475px;
+        width: 141px;
+        height: 194px; }
+    .program:last-child::after {
+        top: 135px;
+        left: 412px;
+        width: 268px;
+        height: 113px; } }
+
+@media (min-width: 1300px) {
+    .program {
+        width: 570px;
+        margin: 0; }
+    .program::before {
+        top: 47px;
+        left: 52px;
+        width: 100px;
+        height: 100px; }
+    .program:first-child::after {
+        top: 41px;
+        left: 65px;
+        width: 71px;
+        height: 97px; }
+    .program:last-child::after {
+        top: 69px;
+        left: 34px;
+        width: 134px;
+        height: 57px; } }
+
+.program:first-child::after {
+    position: absolute;
+    content: "";
+    top: 22px;
+    left: 30px;
+    width: 35px;
+    height: 49px;
+    background-image: url("../img/icon-cat-slim.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat; }
+
+.program:last-child::after {
+    position: absolute;
+    content: "";
+    top: 35px;
+    left: 13px;
+    width: 67px;
+    height: 28px;
+    background-image: url("../img/icon-cat-pro.svg");
     background-position: 0 0;
     background-repeat: no-repeat; }
 
@@ -2436,7 +2499,7 @@ a {
     .weight {
         width: 162px; } }
 
-.weight__kilo {
+.success__number {
     font-family: "Oswald", "Arial", sans-serif;
     font-weight: 400;
     color: #111111;
@@ -2451,7 +2514,7 @@ a {
     text-transform: uppercase; }
 
 @media (min-width: 768px) {
-    .weight__kilo {
+    .success__number {
         padding-top: 11px;
         padding-right: 56px;
         padding-bottom: 14px;
@@ -2459,7 +2522,7 @@ a {
         font-size: 30px;
         line-height: 37px; } }
 
-.weight__text {
+.success__text {
     position: absolute;
     top: 33px;
     left: 18px;
@@ -2474,7 +2537,7 @@ a {
     background-color: #f2f2f2; }
 
 @media (min-width: 768px) {
-    .weight__text {
+    .success__text {
         top: 48px;
         left: 24px;
         width: 114px;
@@ -2484,5 +2547,5 @@ a {
         background-color: #ffffff; } }
 
 @media (min-width: 1300px) {
-    .weight__text {
+    .success__text {
         background-color: #f2f2f2; } }

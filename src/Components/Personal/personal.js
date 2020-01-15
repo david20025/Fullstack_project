@@ -3,8 +3,8 @@ import './style.css';
 import Log from '../img/Log.png'
 import {Link} from "react-router-dom";
 import Name from '../img/Name.png'
-import {axios} from "axios";
-import {Label} from 'reactstrap';
+// import {axios} from "axios";
+// import {Label} from 'reactstrap';
 
 
 class Personal extends Component {
@@ -23,7 +23,7 @@ class Personal extends Component {
 
     constructor(props) {
         super(props);
-        this.signUp = this.signUp.bind(this);
+        // this.signUp = this.signUp.bind(this);
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
@@ -35,37 +35,37 @@ class Personal extends Component {
         };
     }
 
-    submitForm = async (e) => {
-        e.preventDefault();
-        const data = {
-            'username': this.state.login,
-            'email': this.state.email,
-            'password': this.state.password
-        };
-
-        this.setState({
-            'password': '',
-            'error': ''
-        });
-
-        if (!data.username) {
-            this.setState({
-                error: 'Введите имя пользователя.'
-            });
-            return;
-        }
-        if (!data.password) {
-            this.setState({
-                error: 'Введите пароль.'
-            });
-            return;
-        }
-        if (!data.email) {
-            this.setState({
-                error: 'Введите email.'
-            });
-            return;
-        }
+    // submitForm = async (e) => {
+    //     e.preventDefault();
+    //     const data = {
+    //         'username': this.state.login,
+    //         'email': this.state.email,
+    //         'password': this.state.password
+    //     };
+    //
+    //     this.setState({
+    //         'password': '',
+    //         'error': ''
+    //     });
+    //
+    //     if (!data.username) {
+    //         this.setState({
+    //             error: 'Введите имя пользователя.'
+    //         });
+    //         return;
+    //     }
+    //     if (!data.password) {
+    //         this.setState({
+    //             error: 'Введите пароль.'
+    //         });
+    //         return;
+    //     }
+    //     if (!data.email) {
+    //         this.setState({
+    //             error: 'Введите email.'
+    //         });
+    //         return;
+    //     }
 
         // fetch('http://127.0.0.1:8000/api/auth/register', {
         //     method: 'POST',
@@ -93,29 +93,23 @@ class Personal extends Component {
         //             }
         //         });
         //     });
-    };
+    // };
 
-    signUp() {
-        axios.post('http://localhost:8000//signup', {
-            name: this.state.name,
-            email: this.state.email,
-            password: this.state.password
-        })
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    }
+    // signUp() {
+    //     axios.post('http://localhost:8000//signup', {
+    //         name: this.state.name,
+    //         email: this.state.email,
+    //         password: this.state.password
+    //     })
+    //         .then(function (response) {
+    //             console.log(response);
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         });
+    // }
 
     render() {
-        let errorText = '';
-        if (this.state.error) {
-            errorText = (
-                <Label style={{color: 'red'}}>{this.state.error}</Label>
-            );
-        }
         return (
             <body>
 
@@ -248,7 +242,7 @@ class Personal extends Component {
                     </fieldset>
 
                     <div className="selection__wrapper-bottom">
-                        <button onSubmit={this.submitForm} className="selection__button" type="submit">Отправить
+                        <button className="selection__button" type="submit">Отправить
                             заявку
                         </button>
                         <p className="selection__text">* — Обязательные поля</p>
@@ -277,9 +271,6 @@ class Personal extends Component {
                     </div>
                 </div>
             </footer>
-
-            {/*<script src="js/open-menu.js"></script>*/}
-            {/*<script src="js/picturefill.min.js"></script>*/}
 
             </body>
         );

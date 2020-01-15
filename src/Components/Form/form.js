@@ -9,7 +9,7 @@ import {axios} from 'axios';
 class Form extends Component {
     constructor(props) {
         super(props);
-        this.signIn = this.signIn.bind(this);
+        // this.signIn = this.signIn.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.state = {
@@ -17,18 +17,18 @@ class Form extends Component {
             password:''
         };
     }
-    signIn(){
-        axios.post('/signin', {
-            email: this.state.email,
-            password: this.state.password
-        })
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    }
+    // signIn(){
+    //     axios.post('/signin', {
+    //         email: this.state.email,
+    //         password: this.state.password
+    //     })
+    //         .then(function (response) {
+    //             console.log(response);
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         });
+    // }
     handleEmailChange(e){
         this.setState({email:e.target.value})
     }
@@ -92,7 +92,7 @@ class Form extends Component {
                     </div>
 
                     <div className="selection__wrapper-bottom">
-                        <button onClick={this.signIn} className="selection__button" type="submit">Войти</button>
+                        <button className="selection__button" type="submit">Войти</button>
                         <Link className="site-list__link" to="/personal">Зарегистрироваться</Link>
                     </div>
 
