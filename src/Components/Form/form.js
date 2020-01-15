@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './style.css';
 import Log from '../img/Log.png'
 import { Link } from "react-router-dom";
-import Was_now from '../img/Was_now.png'
 import Name from '../img/Name.png'
 import {axios} from 'axios';
 
