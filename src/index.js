@@ -6,13 +6,22 @@ import ReactDOM from 'react-dom';
 // import Main from "./Components/Main";
 // import Footer from "./Components/Footer";
 import * as serviceWorker from './serviceWorker';
-// import Form from "./Components/Form/form.js";
+import Form from "./Components/Form/form";
 // import Personal from "./Components/Personal/personal";
-import {Router} from 'react-router';
+import {Router, Route} from 'react-router';
+import { HashRouter } from 'react-router-dom';
+
 import MainRouter from './routes';
 import createHistory from "history/createBrowserHistory"
 import { BrowserRouter } from 'react-router-dom';
 import General from "./Components/General";
+import Personal from "./Components/Personal/personal";
+// import {app} from "./index.html"
+// var Router = window.ReactRouter.Router;
+// var Route = window.ReactRouter.Route;
+// var hashHistory = window.ReactRouter.hashHistory;
+// var Link = window.ReactRouter.Link;
+
 
 const browserHistory = createHistory()
 export {browserHistory};
@@ -33,9 +42,16 @@ export {browserHistory};
 //         </Provider>
 //     </BrowserRouter>
 // </React.Fragment>,
+//     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 
     ReactDOM.render(
         <React.Fragment>
+            {/*<HashRouter>*/}
+            {/*    <Route component={General} path="/"/>*/}
+            {/*    <Route component={Personal} path="/personal"/>*/}
+            {/*    <Route component={Form} path="/form"/>*/}
+            {/*</HashRouter>,*/}
             <BrowserRouter>
                 {/*<General/>*/}
                 <MainRouter/>
@@ -58,3 +74,4 @@ export {browserHistory};
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+

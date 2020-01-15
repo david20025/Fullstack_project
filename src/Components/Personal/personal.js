@@ -4,10 +4,116 @@ import Log from '../img/Log.png'
 import { Link } from "react-router-dom";
 import Was_now from '../img/Was_now.png'
 import Name from '../img/Name.png'
+import {axios} from "axios";
+import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
 
 class Personal extends Component {
+
+    handleNameChange(e){
+        this.setState({name:e.target.value})
+    }
+    handleEmailChange(e){
+        this.setState({email:e.target.value})
+    }
+    handlePasswordChange(e){
+        this.setState({password:e.target.value})
+    }
+
+    constructor(props) {
+        super(props);
+        this.signUp = this.signUp.bind(this);
+        this.handleNameChange = this.handleNameChange.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handlePasswordChange = this.handlePasswordChange.bind(this);
+        this.state = {
+            name:'',
+            email:'',
+            password:'',
+            error: ''
+        };
+    }
+
+    submitForm = async (e) => {
+        e.preventDefault();
+        const data = {
+            'username': this.state.login,
+            'email': this.state.email,
+            'password': this.state.password
+        };
+
+        this.setState({
+            'password': '',
+            'error': ''
+        });
+
+        if (!data.username) {
+            this.setState({
+                error: 'Введите имя пользователя.'
+            });
+            return;
+        }
+        if (!data.password) {
+            this.setState({
+                error: 'Введите пароль.'
+            });
+            return;
+        }
+        if (!data.email) {
+            this.setState({
+                error: 'Введите email.'
+            });
+            return;
+        }
+
+        fetch('http://127.0.0.1:8000/api/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => {
+                return response.ok ? response.json() : Promise.reject(response);
+            })
+            .then(data => {
+                localStorage.setItem('token', data['token']);
+                this.props.enter(data.user);
+            })
+            .catch(response => {
+                response.json().then(data => {
+                    for (let i in Object.keys(data)) {
+                        let error_array = data[Object.keys(data)[i]];
+                        for (let j in error_array) {
+                            this.setState({
+                                error: error_array[j]
+                            });
+                        }
+                    }
+                });
+            });
+    };
+
+    signUp(){
+        axios.post('http://localhost:8000//signup', {
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
     render() {
+        let errorText = '';
+        if (this.state.error) {
+            errorText = (
+                <Label style={{color: 'red'}}>{this.state.error}</Label>
+            );
+        }
         return (
             <body>
 
@@ -17,14 +123,14 @@ class Personal extends Component {
 
             <header className="page-header">
 
-                <a className="page-header__logo" href="index.js">
+                <Link className="page-header__logo" to="/index.js">
                     <picture>
                         <source media="(min-width: 1300px)" srcSet={Log}/>
                             <source media="(min-width: 768px)" srcSet={Log}/>
                                 <img src={Log} width="191" height="39"
                                      alt="Логотип Musofon"/>
                     </picture>
-                </a>
+                </Link>
 
                 <nav className="page-header__nav main-nav main-nav--closed main-nav--nojs">
                     <button className="main-nav__toggle" type="button">
@@ -46,13 +152,13 @@ class Personal extends Component {
                 <h1 className="page-main__title">Подбор программы</h1>
                 <p className="page-main__text">Заполните анкету и мы подберем необходимый трек</p>
 
-                <form className="selection" action="https://echo.htmlacademy.ru" method="post">
+                <form className="selection">
 
                     <div className="selection__wrapper">
                         <fieldset className="selection__group user">
                             <p className="selection__item">
                                 <label className="user__data" htmlFor="user-name">Имя:* </label>
-                                <input className="user__text" type="text" name="name" id="user-name" placeholder="Роман"
+                                <input onChange={this.handleNameChange} className="user__text" type="text" name="name" id="user-name" placeholder="Роман"
                                        required/>
                             </p>
                             <p className="selection__item">
@@ -87,16 +193,16 @@ class Personal extends Component {
                         <div className="owner__wrapper">
                             <p className="selection__item">
                                 <label className="owner__data" htmlFor="owner-email">E&#8209;mail:*</label>
-                                <input className="owner__text" type="email" name="email" id="owner-email"
+                                <input onChange={this.handleEmailChange} className="owner__text" type="email" name="email" id="owner-email"
                                        placeholder="musofon@mail.ru" required/>
                                     <svg className="owner__mail" width="18" height="14">
                                         <use href="img/sprite.svg#icon-mail"/>
                                     </svg>
                             </p>
                             <p className="selection__item">
-                                <label className="owner__data" htmlFor="owner-tel">Телефон:*</label>
-                                <input className="owner__text" type="tel" name="tel" id="owner-tel"
-                                       placeholder="8 (960) 900-60-90" required/>
+                                <label className="owner__data" htmlFor="owner-pwd">Пароль:*</label>
+                                <input onChange={this.handlePasswordChange} className="owner__text" type="pwd" name="pwd" id="owner-pwd"
+                                       placeholder="********" required/>
                                     <svg className="owner__phone" width="21" height="21">
                                         <use href="img/sprite.svg#icon-phone"/>
                                     </svg>
@@ -137,7 +243,7 @@ class Personal extends Component {
                     </fieldset>
 
                     <div className="selection__wrapper-bottom">
-                        <button className="selection__button" type="submit">Отправить заявку</button>
+                        <button onSubmit={this.submitForm} className="selection__button" type="submit">Отправить заявку</button>
                         <p className="selection__text">* — Обязательные поля</p>
                     </div>
 

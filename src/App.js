@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+var express = require("express");
+var path = require("path");
+var bodyParser = require("body-parser");
+var user = require('./user')
+// var routes = require('./routes');
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+var app = express();
 
-export default App;
+app.use(express.static(path.join(__dirname,".")));
+
+app.use(bodyParser.json());
+// app.use('/', routes);
+
+app.post('/signin', function (req, res) {
+  const user_name = req.body.email;
+  var password=req.body.password;
+  user.validateSignIn(user_name,password,function(result){
+    if(result){
+      res.send('Success')
+    }
+    else{
+      res.send('Wrong username pass')
+    }
+  });
+
+
+
+})
+
+app.post('/signup', function (req, res) {
+  var name=req.body.name;
+  var email=req.body.email;
+  var password=req.body.password;
+
+  if(name && email && password){
+    user.signup(name, email, password)
+    console.log("ok", 8000);
+  }
+  else{
+    res.send('Failure');
+    console.log("bad", 8000);
+  }
+})
+
+app.listen(8000,function(){
+  console.log("Started listening on port", 8000);
+})

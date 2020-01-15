@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Fullstack_project.iml" filepath="$PROJECT_DIR$/.idea/Fullstack_project.iml" />
+      <module fileurl="file://$USER_HOME$/Рабочий стол/MIPT_Fullstack-master/.idea/MIPT_Fullstack-master.iml" filepath="$USER_HOME$/Рабочий стол/MIPT_Fullstack-master/.idea/MIPT_Fullstack-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/../source/.idea/source.iml" filepath="$PROJECT_DIR$/../source/.idea/source.iml" />
     </modules>
   </component>
