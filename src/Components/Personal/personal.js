@@ -255,7 +255,7 @@ class Personal extends Component {
 
                 <div className="page-footer__map">
                     <iframe className="page-footer__map-yandex"
-                            src="https://krimmkr.carto.com/builder/1e866a05-8f2c-4df7-86ad-18d33bbfd2fe/embed"
+                            src="https://krimmkr.carto.com/builder/3d2ed79b-f6d0-4777-aa14-d9a52203e509/embed"
                             allowFullScreen webkitallowfullscreen mozallowfullscreen oallowfullscreen
                             msallowfullscreen/>
                 </div>
